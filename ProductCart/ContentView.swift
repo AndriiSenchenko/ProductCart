@@ -5,22 +5,20 @@
 //  Created by Andrii on 07.10.2023.
 //
 
+
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var viewModel: ProductViewModel
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+            ProductSelectionView(viewModel: viewModel)
     }
 }
 
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(viewModel: ProductViewModel())
     }
 }
